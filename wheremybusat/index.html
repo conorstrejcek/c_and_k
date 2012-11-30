@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+<title>Where My Bus At?</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/general.css">
+
+
+<!--Loads the standard map, geometry, and drawing libraries-->
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDOO0lt0Z8JXPEB1ErB8GmOfrm7MGmz3Pk&sensor=false">
+</script>
+<script type="text/javascript" 
+	src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false">
+</script>
+<script type="text/javascript" 
+	src="http://maps.googleapis.com/maps/api/js?libraries=drawing&sensor=false">
+</script>
+
+
+
+
+<script type="text/javascript">
+
+  
+function initialize() {
+  var myLatLng = new google.maps.LatLng(40.49369829904371, -88.9947509765625);
+  var myOptions = {
+    zoom: 13,
+    center: myLatLng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById("map_canvas"),
+      myOptions);
+  
+  //Green-A Route
+  var greenA = [
+    new google.maps.LatLng(40.49306597067718,-88.99099856615067),
+    new google.maps.LatLng(40.493131243558544,-88.98669898509979),
+    new google.maps.LatLng(40.49818765909877,-88.98683577775955),
+    new google.maps.LatLng(40.49811423263653,-88.99091005325317),
+    new google.maps.LatLng(40.502780732485306,-88.99111121892929),
+    new google.maps.LatLng(40.502754219198586,-88.99286538362503),
+    new google.maps.LatLng(40.503822900300044,-88.99296462535858),
+    new google.maps.LatLng(40.502709350535625,-88.9945524930954),
+    new google.maps.LatLng(40.51084640352151,-88.99493873119354),  
+    new google.maps.LatLng(40.51084232504551,-88.99020731449127),  
+    new google.maps.LatLng(40.51061392999366,-88.98957967758179),  
+    new google.maps.LatLng(40.50940260751938,-88.98951530456543),
+    new google.maps.LatLng(40.5093944503915,-88.9881956577301)
+  ];
+  
+  var greenADraw = new google.maps.Polyline({
+    path: greenA,
+    strokeColor: "#337D33",
+    strokeOpacity: 1.0,
+    strokeWeight: 3
+  });
+
+  //Draws the Green-A route
+  greenADraw.setMap(map);
+}
+  	
+</script>
+
+</head>
+
+  <body onload="initialize()">
+    <div id="map_canvas"></div>
+  
+  
+  </body>
+</html>

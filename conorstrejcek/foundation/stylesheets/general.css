@@ -1,0 +1,40 @@
+body {
+	background:url("../images/debut_light.png") !important;
+}
+
+.page_title {
+	font-size: 80pt;
+	text-align: center;
+	font-weight: 300;
+}
+
+.page_title:link {
+	color:black;
+}
+
+.page_title:hover {
+	color:black;
+}
+
+.page_title:visited {
+	color:black;
+}
+
+.header {
+	font-size: 14pt;
+	text-align: center;
+}
+
+.header_img {
+	text-align:center;
+	margin:auto;
+}
+
+.panel_text {
+	font-size: 12pt;
+}
+
+.panel_title {
+	font-size: 24pt;
+	font-weight:300;
+}

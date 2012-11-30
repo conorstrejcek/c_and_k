@@ -1,0 +1,108 @@
+20120125T191050: routrr.com/cgi-bin/tripstest.py
+Traceback (most recent call last):
+  File "/home/users/web/b1418/moo.routrrcom/cgi-bin/tripstest.py", line 4, in <module>
+    for line in open("trips.dat"):
+IOError: [Errno 2] No such file or directory: 'trips.dat'
+
+20120125T192048: routrr.com/tripstest.php
+  File "cgi-bin/trips.py", line 4
+    a = open("trips.dat") 
+    ^
+IndentationError: unexpected indent
+
+20120125T232133: routrr.com/tripstest.php
+Traceback (most recent call last):
+  File "cgi-bin/trips.py", line 5, in <module>
+    a = open("awesome.txt", w) 
+NameError: name 'w' is not defined
+
+20120125T232135: routrr.com/tripstest.php
+Traceback (most recent call last):
+  File "cgi-bin/trips.py", line 5, in <module>
+    a = open("awesome.txt", w) 
+NameError: name 'w' is not defined
+
+20120125T232600: routrr.com/tripstest.php
+Traceback (most recent call last):
+  File "cgi-bin/trips.py", line 5, in <module>
+    a = open("file.txt", "r")
+IOError: [Errno 2] No such file or directory: 'file.txt'
+
+20120125T232925: routrr.com/tripstest.php
+Traceback (most recent call last):
+  File "cgi-bin/search.py", line 112, in <module>
+    main()
+  File "cgi-bin/search.py", line 87, in main
+    depart = int(query.pop())		#pops off last int, 1 if departure time, 0 if arrival
+IndexError: pop from empty list
+
+20120125T233004: routrr.com/tripstest.php
+Traceback (most recent call last):
+  File "cgi-bin/search.py", line 112, in <module>
+    main()
+  File "cgi-bin/search.py", line 87, in main
+    depart = int(query.pop())		#pops off last int, 1 if departure time, 0 if arrival
+IndexError: pop from empty list
+
+20120126T000016: routrr.com/results.php
+suexec policy violation: see suexec log for more details
+
+20120127T015036: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015037: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015039: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015043: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015043: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015043: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015044: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015044: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120127T015047: www.routrr.com/php/Express_Buslines.php
+suexec policy violation: see suexec log for more details
+
+20120319T232316: routrr.com/results.php
+Traceback (most recent call last):
+  File "cgi-bin/search.py", line 114, in <module>
+    main()
+  File "cgi-bin/search.py", line 90, in main
+    am = int(query.pop())			#pops off last int, 1 if am, 0 if pm
+ValueError: invalid literal for int() with base 10: ':'
+
+20120330T172227: www.routrr.com/results.php
+Traceback (most recent call last):
+  File "cgi-bin/search.py", line 114, in <module>
+    main()
+  File "cgi-bin/search.py", line 89, in main
+    depart = int(query.pop())		#pops off last int, 1 if departure time, 0 if arrival
+ValueError: invalid literal for int() with base 10: ':'
+
+20120918T110144: routrr.com/formatting.php
+Traceback (most recent call last):
+  File "cgi-bin/search.py", line 73, in <module>
+    main()
+  File "cgi-bin/search.py", line 51, in main
+    within = int(query.pop())		#pops off last int, num of hours within which to search
+IndexError: pop from empty list
+
+20120918T110246: routrr.com/formatting.php
+Traceback (most recent call last):
+  File "cgi-bin/search.py", line 73, in <module>
+    main()
+  File "cgi-bin/search.py", line 51, in main
+    within = int(query.pop())		#pops off last int, num of hours within which to search
+IndexError: pop from empty list
+

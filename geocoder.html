@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/foundation.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/routrr.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/reveal.css">
+<link type="text/css" href="stylesheets/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+
+<script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="javascripts/app.js"></script>
+<script type="text/javascript" src="javascripts/foundation.js"></script>
+<script type="text/javascript" src="javascripts/modernizr.foundation.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOO0lt0Z8JXPEB1ErB8GmOfrm7MGmz3Pk&sensor=false"></script>
+    <script type="text/javascript">
+      function initialize() {
+        var myOptions = {
+          zoom: 8,
+          center: new google.maps.LatLng(-34.397, 150.644),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("testModal"),
+            myOptions);
+      }
+      
+		function loadScript() {
+  			var script = document.createElement("script");
+  			script.type = "text/javascript";
+  			script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDOO0lt0Z8JXPEB1ErB8GmOfrm7MGmz3Pk&sensor=false&callback=initialize";
+  			document.body.appendChild(script);
+		}
+
+    </script>
+  </head>
+  <body>
+		
+   
+    <div id="testModal" class="reveal-modal center">
+    	<div id="map_canvas" style="width:100px; height:100px;"></div>
+   		<a onclick="loadScript();">Click me!</a>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<a href="" data-reveal-id="testModal">Click this for modal.</a>
+  </body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+   "http://www.w3.org/TR/html4/loose.dtd">
+   
+<head>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/foundation.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/foundation-icons-general.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/routrr.css">
+<link type="text/css" href="stylesheets/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+
+<script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="javascripts/app.js"></script>
+<script type="text/javascript" src="javascripts/foundation.js"></script>
+<script type="text/javascript" src="javascripts/modernizr.foundation.js"></script>
+<script type="text/javascript" src="javascripts/jquery-ui-1.8.19.custom.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOO0lt0Z8JXPEB1ErB8GmOfrm7MGmz3Pk&sensor=false&libraries=geometry"></script>
+
+
+
+<title>routrr</title>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script>
+
+
+//Whether or not advanced options has been clicked
+var advanced_options = false;
+
+function setDatepicker(){
+    var d=new Date();
+	var month = d.getMonth() + 1;
+        if (month < 10) {
+            month = "0" + (d.getMonth() + 1);
+        }
+	var day = d.getDate();
+        if (day < 10){
+            day = "0" + (d.getDate());
+        }
+	var year = d.getFullYear();
+	date = month + "/" + day + "/" + year;
+    document.getElementById("datepicker").value=date;
+}
+
+$(function() {
+	$("#datepicker").datepicker();
+	
+	var availableTags = [
+		"Bloomington/Normal",
+		"Carbondale",
+		"Champaign",
+		"Chicago",
+		"Peoria",
+		"Suburbs",
+	];
+	
+	var timeTags = [
+		"12:00 am",
+		"12:15 am",
+		"12:30 am",
+		"12:45 am",
+		"1:00 am",
+		"1:15 am",
+		"1:30 am",
+		"1:45 am",
+		"2:00 am",
+		"2:15 am",
+		"2:30 am",
+		"2:45 am",
+		"3:00 am",
+		"3:15 am",
+		"3:30 am",
+		"3:45 am",
+		"4:00 am",
+		"4:15 am",
+		"4:30 am",
+		"4:45 am",
+		"5:00 am",
+		"5:15 am",
+		"5:30 am",
+		"5:45 am",
+		"6:00 am",
+		"6:15 am",
+		"6:30 am",
+		"6:45 am",
+		"7:00 am",
+		"7:15 am",
+		"7:30 am",
+		"7:45 am",
+		"8:00 am",
+		"8:15 am",
+		"8:30 am",
+		"8:45 am",
+		"9:00 am",
+		"9:15 am",
+		"9:30 am",
+		"9:45 am",
+		"10:00 am",
+		"10:15 am",
+		"10:30 am",
+		"10:45 am",
+		"11:00 am",
+		"11:15 am",
+		"11:30 am",
+		"11:45 am",
+		"12:00 pm",
+		"12:15 pm",
+		"12:30 pm",
+		"12:45 pm",
+		"1:00 pm",
+		"1:15 pm",
+		"1:30 pm",
+		"1:45 pm",
+		"2:00 pm",
+		"2:15 pm",
+		"2:30 pm",
+		"2:45 pm",
+		"3:00 pm",
+		"3:15 pm",
+		"3:30 pm",
+		"3:45 pm",
+		"4:00 pm",
+		"4:15 pm",
+		"4:30 pm",
+		"4:45 pm",
+		"5:00 pm",
+		"5:15 pm",
+		"5:30 pm",
+		"5:45 pm",
+		"6:00 pm",
+		"6:15 pm",
+		"6:30 pm",
+		"6:45 pm",
+		"7:00 pm",
+		"7:15 pm",
+		"7:30 pm",
+		"7:45 pm",
+		"8:00 pm",
+		"8:15 pm",
+		"8:30 pm",
+		"8:45 pm",
+		"9:00 pm",
+		"9:15 pm",
+		"9:30 pm",
+		"9:45 pm",
+		"10:00 pm",
+		"10:15 pm",
+		"10:30 pm",
+		"10:45 pm",
+		"11:00 pm",
+		"11:15 pm",
+		"11:30 pm",
+		"11:45 pm",
+	];
+	
+	$("#from").autocomplete({
+		source: availableTags,
+		//change: function(event, ui) {alert(lol)}
+	});
+	$("#to").autocomplete({
+		source: availableTags
+	});
+	$("#time").autocomplete({
+		source: timeTags
+	});
+	
+	$("#from").live("blur", function(event) {
+		var autocomplete = $(this).data("autocomplete");
+		var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex($(this).val()) + "$", "i");
+		var myInput = $(this);
+		autocomplete.widget().children(".ui-menu-item").each(function() {
+			//Check if each autocomplete item is a case-insensitive match on the input
+			var item = $(this).data("item.autocomplete");
+			if (matcher.test(item.label || item.value || item)) {
+				//There was a match, lets stop checking
+				autocomplete.selectedItem = item;
+				return;
+			}
+		});
+		//if there was a match trigger the select event on that match
+		//I would recommend matching the label to the input in the select event
+		if (autocomplete.selectedItem) {
+			autocomplete._trigger("select", event, {
+				item: autocomplete.selectedItem
+			});
+		//there was no match, clear the input
+		} else {
+			$(this).val('');
+		}
+    });
+    
+    $("#to").live("blur", function(event) {
+		var autocomplete = $(this).data("autocomplete");
+		var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex($(this).val()) + "$", "i");
+		var myInput = $(this);
+		autocomplete.widget().children(".ui-menu-item").each(function() {
+			//Check if each autocomplete item is a case-insensitive match on the input
+			var item = $(this).data("item.autocomplete");
+			if (matcher.test(item.label || item.value || item)) {
+				//There was a match, lets stop checking
+				autocomplete.selectedItem = item;
+				return;
+			}
+		});
+		//if there was a match trigger the select event on that match
+		//I would recommend matching the label to the input in the select event
+		if (autocomplete.selectedItem) {
+			autocomplete._trigger("select", event, {
+				item: autocomplete.selectedItem
+			});
+		//there was no match, clear the input
+		} else {
+			$(this).val('');
+		}
+	});
+	
+	$("#time").live("blur", function(event) {
+		var autocomplete = $(this).data("autocomplete");
+		var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex($(this).val()) + "$", "i");
+		var myInput = $(this);
+		autocomplete.widget().children(".ui-menu-item").each(function() {
+			//Check if each autocomplete item is a case-insensitive match on the input
+			var item = $(this).data("item.autocomplete");
+			if (matcher.test(item.label || item.value || item)) {
+				//There was a match, lets stop checking
+				autocomplete.selectedItem = item;
+				return;
+			}
+		});
+		//if there was a match trigger the select event on that match
+		//I would recommend matching the label to the input in the select event
+		if (autocomplete.selectedItem) {
+			autocomplete._trigger("select", event, {
+				item: autocomplete.selectedItem
+			});
+		//there was no match, clear the input
+		} else {
+			$(this).val('');
+		}
+	});
+});
+
+
+$(document).ready(function(){
+
+	if ($('#time').val() != "") {
+		$("#advanced_options").show();
+	}
+	else {
+		 $("#advanced_options").hide();
+	}
+       
+      
+       setDatepicker();
+       
+       $("#advanced").click(function() {
+       		if (advanced_options){
+       			$("#advanced_options").fadeOut();
+       			advanced_options = false;
+       			document.getElementById("icon").innerHTML="x";
+       		}
+       		else{
+       			$("#advanced_options").fadeIn();
+       			advanced_options = true;
+       			document.getElementById("icon").innerHTML="w";
+       		}
+       		
+       	});
+       	
+});
+
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28635105-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+
+
+<!--Facebook Like Button-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--End of Facebook Code-->
+
+
+<!--Twitter Code-->
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="//platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+<!--End Twitter Code-->
+	
+		<!--Header Row Start-->
+		<div class="row">
+			<div class="twelve columns">
+			<img alt="routrr" src="images/routrrtitle.png" style="display:block;margin-left:auto;margin-right:auto;">
+				<div class="subtitle">
+					An easier way to find your way
+				</div>
+			</div>
+		</div>
+		<!--Header Row End-->
+		
+		<br>
+		<br>
+		
+		
+		<!--Form Row Start-->
+		<div class="row">
+			<div id="maincontent" class="six columns centered panel">
+				<br>
+				<form id="tripform" class="custom nice" method="POST" action="search_results.php">
+					
+					<div class="row">
+						<div class="three columns right hide-on-phones"><h5>from</h5></div>
+						<div class="three columns show-on-phones"><h4>from</h4></div>
+						<div class="nine columns"><input required name="from" type="text" class="input-text" id="from" placeholder="Enter your departure city" /></div>
+					</div>
+					
+					<br>
+					
+					<div class="row">
+						<div class="three columns right hide-on-phones"><h5>to</h5></div>
+						<div class="three columns show-on-phones"><h4>to</h4></div>
+						<div class="nine columns"><input required name="to" type="text" class="input-text" id="to" placeholder="Enter your arrival city" /></div>
+					</div>
+					
+					<br>
+					
+					<div class="row">
+						<div class="three columns right hide-on-phones"><h5>on</h5></div>
+						<div class="three columns show-on-phones"><h4>on</h4></div>
+						<div class="seven columns"><input required type="text" name="datePicked" class="inputDate input-text" id="datepicker" value="01/01/2012"></div>
+						<div class="two columns text"><a id="advanced" style="text-decoration:underline;">advanced</a><br><span id="icon" class="glyph general" style="font-size:8pt;">x</span></div>
+					</div>
+					
+					
+					
+					
+					
+					<div id="advanced_options">
+						<div class="row">
+							<div class="three columns offset-by-three">		
+								<a name="depart"></a>
+								<select name="depart" id="depart_dropdown">
+									<option selected="selected" value="1">Departing</option>
+									<option value="0">Arriving</option>
+								</select>
+							</div>
+							<div class="one columns"><h5>&nbsp;&nbsp;at</h5></div>
+							<div class="five columns"><input name="time" type="text" class="input-text" id="time" placeholder="e.g. 2:15 pm" style="max-width:89px;" /></div>
+						</div>
+					</div>
+					
+					<br>
+					
+					<input type="submit" class="large white radius button" value="Find a Bus!"></input>
+				</form>
+			</div>
+		</div>
+		<!--Form Row End-->
+		<br><br>
+		<!--Panel Row Start-->
+		<div class="row">
+		
+			<div class="four columns">
+				<div class="panel">
+				<h5>News</h5>
+				<br>
+				<h6>Headline 1</h6>
+					Here is some info about this headline.
+					The text even wraps properly.
+					<br>
+					<br>
+				<h6>Headline 2</h6>
+					Here is some info about this headline.
+					The text even wraps properly.
+					<br>
+				</div>
+			</div>
+			
+			<div class="four columns">
+				<div class="panel" style="text-align:center;">
+					<h5>Keep me updated!</h5>
+					Subscribe to our mailing list
+					<form method="post" action="http://www.fatcow.com/scripts/formemail.bml" name="email subscribe" class="validate nice">
+						<input type="hidden" name="my_email" value="suggestions@routrr.com">
+                		<input type="hidden" name="subject" value="Email Subscription">
+						<br>
+							<input type="email" value="" name="EMAIL" class="email input-text" id="mce-EMAIL" placeholder="Enter your email address" required email>
+							<br>
+						<input type="submit" value="Subscribe" name="subscribe" class="medium white button">
+					</form>
+				</div>
+				
+			</div>
+			
+			<div class="four columns">
+				<div class="panel">
+					<div class="row">
+						<div class="twelve columns" style="text-align:center;">
+							<h5>Like what you see?</h5>
+							Tell your friends!
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="six columns">
+							<div class="fb-like" data-href="http://www.routrr.com" data-send="false" data-layout="box_count" data-width="450" data-show-faces="true"></div>
+						</div>
+
+						<div class="six columns">
+						<a href="https://twitter.com/routrr" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @routrr</a>
+						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--Panel Row End-->
+		
+		<br>
+		
+		<!--Footer Row Start-->
+		<div name="footer" class="row">
+			<div class="four columns offset-by-four text center">
+				<a class="nav" href="about.html">About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="nav" href="blog">Blog</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="nav" href="suggestion.html">Suggestion Box</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<br>
+				<h6>&copy; routrr</h6>
+			</div>
+		</div>
+		<br>
+		<br>
+		<!--Footer Row End-->
+	
+	
+		
+
+</body>
+</html>

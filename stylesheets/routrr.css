@@ -1,0 +1,70 @@
+body {
+	background: url("../images/background.png")	
+}
+
+div.subtitle {
+	font-size:16pt;
+	text-align:center;
+	color:#000;
+}
+
+#maincontent {
+	background: url("../images/green.png");
+	text-align:center;
+}
+
+#confirmation {
+	background: url("../images/green.png");
+}
+
+
+.right {
+	text-align:right;
+}
+
+.left {
+	text-align:left;
+}
+
+.center {
+	text-align:center;
+}
+
+.text{
+	color:#000;
+}
+
+a {
+	cursor:pointer;
+	text-decoration:none;
+}
+
+a.black {
+	color:black;
+	text-decoration:underline;
+}
+
+a.nav {
+	font-size: 11pt;
+	color:black;
+}
+
+img.bus_logo {
+	width:80px;
+
+}
+
+td:hover {
+	cursor:pointer;
+}
+
+th:hover {
+    cursor:pointer
+}
+
+.demoHeaders { margin-top: 2em; }
+#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+ul#icons {margin: 0; padding: 0;}
+ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
