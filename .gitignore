@@ -28,9 +28,6 @@ local.properties
 # PDT-specific
 .buildpath
 
-# Cloud9 files:
-.c9revisions
-
 #################
 ## Visual Studio
 #################
