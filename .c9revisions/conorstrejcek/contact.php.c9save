@@ -68,3 +68,6 @@
 {"ts":1354334919932,"patch":[[{"diffs":[[0,"ers);  \n"],[1,"    \n"],[0,"?>\n \n<!-"]],"start1":2387,"start2":2387,"length1":16,"length2":21}]],"length":2479,"saved":false}
 {"ts":1354334921065,"patch":[[{"diffs":[[0,";  \n    "],[1,")"],[0,"\n?>\n \n<!"]],"start1":2391,"start2":2391,"length1":16,"length2":17}]],"length":2480,"saved":false}
 {"ts":1354334922548,"patch":[[{"diffs":[[0,";  \n    "],[-1,")"],[1,"}"],[0,"\n?>\n \n<!"]],"start1":2391,"start2":2391,"length1":17,"length2":17}]],"length":2480,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1354504912782,"patch":[[{"diffs":[[0,"age .= \""],[-1,"m"],[1,"M"],[0,"essage: "]],"start1":2094,"start2":2094,"length1":17,"length2":17}]],"length":2480,"saved":false}
+{"ts":1354504928294,"patch":[[{"diffs":[[0,"= 'From: '.$"],[-1,"email_from"],[1,"name"],[0,".\"\\r\\n\".\n   "]],"start1":2211,"start2":2211,"length1":34,"length2":28}]],"length":2474,"saved":false}
+{"ts":1354504976275,"patch":[[{"diffs":[[0,"cting me"],[1,", I will get back to you as soon as possible"],[0,"."]],"start1":2465,"start2":2465,"length1":9,"length2":53}]],"length":2518,"saved":false}
