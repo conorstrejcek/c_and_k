@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="foundation/stylesheets/foundation.css">
+<link rel="stylesheet" type="text/css" href="foundation/stylesheets/general.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="foundation/javascripts/foundation.min.js"></script>
+<script type="text/javascript" src="foundation/javascripts/app.js"></script>
+
+</head>
+<body>
+<form action="" method="POST" id="payment-form">
+    <div class="row">
+        <label>Card Number</label>
+        <input type="text" size="20" autocomplete="off" class="card-number"/>
+    </div>
+    <div class="row">
+        <label>CVC</label>
+        <input type="text" size="4" autocomplete="off" class="card-cvc"/>
+    </div>
+    <div class="row">
+        <div class="six columns">
+            <label>Expiration (MM/YYYY)</label>
+            <input type="text" size="2" class="card-expiry-month"/>
+        </div>
+    /
+        <div class="six columns">
+        <input type="text" size="4" class="card-expiry-year"/>
+        </div>
+    </div>
+    <div class="row center">
+        <button type="submit" class="button">Submit Payment</button>
+    </div>
+</form>
+
+    
+</body>
+</html>
