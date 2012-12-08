@@ -1,10 +1,11 @@
 <?php
-    require_once(dirname(FILE) . '/config.php');
+    require_once(dirname(__FILE__) . '/config.php');
 
     $token  = $_POST['stripeToken'];
+    $amount  = $_POST['amount'];
     $charge = Stripe_Charge::create(array(
         'card'     => $token,
-        'amount'   => 5000,
+        'amount'   => $amount,
         'currency' => 'usd'
     ));
 

@@ -20,40 +20,23 @@
 <br>
 <br>
 
-<form action="" method="POST" id="payment-form">
-    <div class="row">
-        <div class = "five columns">
-            <label>Card Number</label>
-            <input type="text" maxlength="20" autocomplete="off" class="card-number"/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="one columns">
-            <label>CVC</label>
-            <input type="text" maxlength="4" autocomplete="off" class="card-cvc"/>
-        </div>
-        <div class="two columns">
-            <label>Expiration (MM</label>
-            <input type="text" maxlength="2" class="card-expiry-month"/>
-        </div>
-        <div class="two columns end">
-            <label>/YY)</label>
-            <input type="text" maxlength="2" class="card-expiry-year"/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="five columns">
-            <button type="submit" class="button">Submit Payment</button>
-        </div>
-    </div>
-</form>
-
 <?php require_once('./config.php'); ?>
 
 <form action="charge.php" method="post">
-    <script src="https://button.stripe.com/v1/button.js" class="stripe-button"
-        data-key="<?php echo $stripe['publishable_key']; ?>"
-        data-amount="5000" data-description="One year's subscription"></script>
+    <div class="row">
+        <div class="two columns centered">
+            <label>Amount</label>
+            <input type="text" class="amount"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two columns centered">
+            <script src="https://button.stripe.com/v1/button.js" class="stripe-button"
+                data-key="<?php echo $stripe['publishable_key']; ?>"
+                data-amount="Custom" data-description="Pay What You Want">
+            </script>
+        </div>
+    </div>
 </form>
 
 </body>
