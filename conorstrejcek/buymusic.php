@@ -22,11 +22,23 @@
 
 <?php require_once('./config.php'); ?>
 
+
+<div class="row">
+
+</div>
+
 <form action="charge.php" method="post">
     <div class="row">
         <div class="two columns centered">
             <label>Amount</label>
-            <input type="text" name="amount"/>
+            <div class="row collapse">
+                <div class="two mobile-one columns">
+                    <span class="prefix">$</span>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="amount"/>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
