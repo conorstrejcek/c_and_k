@@ -26,7 +26,7 @@
     <div class="row">
         <div class="two columns centered">
             <label>Amount</label>
-            <input type="text" class="amount"/>
+            <input type="text" name="amount"/>
         </div>
     </div>
     <div class="row">
