@@ -1,0 +1,15 @@
+{"ts":1354930860336,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1354930868128,"patch":[[{"diffs":[[1,"<?php\n  require_once(dirname(FILE) . '/config.php');\n\n  $token  = $_POST['stripeToken'];\n  $charge = Stripe_Charge::create(array(\n      'card'     => $token,\n      'amount'   => 5000,\n      'currency' => 'usd'\n  ));\n\n  echo '<h1>Successfully charged $50.00!</h1>';\n?>"]],"start1":0,"start2":0,"length1":0,"length2":267}]],"length":267,"saved":false}
+{"ts":1354930871489,"patch":[[{"diffs":[[0,"<?php\n"],[1,"  "],[0,"  requir"]],"start1":0,"start2":0,"length1":14,"length2":16}]],"length":269,"saved":false}
+{"ts":1354930874612,"patch":[[{"diffs":[[0,"php');\n\n"],[1,"  "],[0,"  $token"]],"start1":48,"start2":48,"length1":16,"length2":18}]],"length":271,"saved":false}
+{"ts":1354930876104,"patch":[[{"diffs":[[0,"oken'];\n"],[1,"  "],[0,"  $charg"]],"start1":85,"start2":85,"length1":16,"length2":18}]],"length":273,"saved":false}
+{"ts":1354930878027,"patch":[[{"diffs":[[0,"(\n      "],[1,"  "],[0,"'card'  "]],"start1":134,"start2":134,"length1":16,"length2":18}]],"length":275,"saved":false}
+{"ts":1354930878666,"patch":[[{"diffs":[[0,"(array(\n"],[-1,"    "],[0,"    'car"]],"start1":128,"start2":128,"length1":20,"length2":16}]],"length":271,"saved":false}
+{"ts":1354930882377,"patch":[[{"diffs":[[0,"en,\n    "],[-1,"  "],[0,"'amount'"]],"start1":158,"start2":158,"length1":18,"length2":16}]],"length":269,"saved":false}
+{"ts":1354930883490,"patch":[[{"diffs":[[0,"$token,\n"],[1,"    "],[0,"    'amo"]],"start1":154,"start2":154,"length1":16,"length2":20}]],"length":273,"saved":false}
+{"ts":1354930886028,"patch":[[{"diffs":[[0,"(array(\n"],[1,"    "],[0,"    'car"]],"start1":128,"start2":128,"length1":16,"length2":20}]],"length":277,"saved":false}
+{"ts":1354930887929,"patch":[[{"diffs":[[0,"> 5000,\n"],[-1,"      "],[0,"'currenc"]],"start1":186,"start2":186,"length1":22,"length2":16}]],"length":271,"saved":false}
+{"ts":1354930888906,"patch":[[{"diffs":[[0,"> 5000,\n"],[1,"        "],[0,"'currenc"]],"start1":186,"start2":186,"length1":16,"length2":24}]],"length":279,"saved":false}
+{"ts":1354930894871,"patch":[[{"diffs":[[0,"> 'usd'\n"],[1,"  "],[0,"  ));\n\n "]],"start1":214,"start2":214,"length1":16,"length2":18}]],"length":281,"saved":false}
+{"ts":1354930898644,"patch":[[{"diffs":[[0,"   ));\n\n"],[-1," "],[0," echo '<"]],"start1":223,"start2":223,"length1":17,"length2":16}]],"length":280,"saved":false}
+{"ts":1354930900362,"patch":[[{"diffs":[[0,"   ));\n\n"],[1,"   "],[0," echo '<"]],"start1":223,"start2":223,"length1":16,"length2":19}]],"length":283,"saved":false}
