@@ -21,7 +21,7 @@
     $token  = $_POST['stripeToken'];
     $amount  = $_POST['amount'];
     
-    $dollars = (float) $InvoicedUnits;
+    $dollars = (float) $amount;
     $cents = $dollars*100;
     
     $charge = Stripe_Charge::create(array(
