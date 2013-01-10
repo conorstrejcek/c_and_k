@@ -12,10 +12,6 @@
 
 		<script type="text/javascript" src="javascripts/app.js"></script>
 		<script type="text/javascript" src="javascripts/foundation.min.js"></script>
-		<script type="text/javascript" src="javascripts/jquery.js"></script>
-		<script type="text/javascript" src="javascripts/modernizr.foundation.js"></script>
-		<script type="text/javascript" src="javascripts/jquery.foundation.buttons.js"></script>
-		<script type="text/javascript" src="javascripts/jquery.foundation.forms.js"></script>
 	
 	<title>Personal/Business - modernsource</title>
 
@@ -75,34 +71,27 @@
 		
 		<!--RFP Form Row-->
 		<div class="row center">
-		<h3>Get Started!</h3>
+		    <h3>Get Started!</h3>
+        </div>
+        <div class="row">
 			<div class="eight columns centered panel">
 				<form class="custom">
 					<div class="row">
 						<div class="six columns">
-						Number of pages: 
+						    Number of pages: 
+						</div>
+                        <div class="six columns">
+						    <input type="text" class="medium" placeholder="Enter how many pages you need."  />
+                        </div>
+					</div>
+                    
+                    <div class="row">
+    					<div class="six columns">
+						Email<br> 
+						(somewhere we can send our designs): 
 						</div>
 						<div class="six columns">
-							<select style="display:none;" id="customDropdown">
-								<option SELECTED>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-							<div class="custom dropdown">
-								<a href="#" class="current">
-								1
-								</a>
-								<a href="#" class="selector"></a>
-								<ul>
-								  <li>1</li>
-								  <li>2</li>
-								  <li>3</li>
-								  <li>4</li>
-								  <li>5</li>
-								</ul>
-							</div>
+							<input name="email" type="text" placeholder="youremail@domain.com"  />
 						</div>
 					</div>
 					
@@ -110,12 +99,12 @@
 						<div class="six columns">
 						Need hosting? 
 						</div>
-						<div class="six columns">
+						<div class="two columns end">
 							<select style="display:none;" id="customDropdown">
 								<option SELECTED>No</option>
 								<option>Yes</option>
 							</select>
-							<div class="custom dropdown">
+							<div class="custom dropdown expand">
 								<a href="#" class="current">
 								No
 								</a>
@@ -132,12 +121,12 @@
 						<div class="six columns">
 						Need a domain? 
 						</div>
-						<div class="six columns">
+						<div class="two columns end">
 							<select style="display:none;" id="customDropdown">
 								<option SELECTED>No</option>
 								<option>Yes</option>
 							</select>
-							<div class="custom dropdown">
+							<div class="custom dropdown expand">
 								<a href="#" class="current">
 								No
 								</a>
@@ -149,21 +138,10 @@
 							</div>
 						</div>
 					</div>
-					
-					<div class="row">
-						<div class="six columns">
-						Email<br> 
-						(somewhere we can send our designs): 
-						</div>
-						<div class="six columns">
-							<input name="email" type="text" placeholder="youremail@domain.com"  />
-						</div>
-					</div>
-					
 					<div class="row">
 						<h6>Anything else you can tell us?</h6>
-						<textarea rows="4" cols="50" placeholder="Description of your site, page names, and what you want them to do..." ></textarea>
-					</div>
+						<textarea rows="4" cols="50" placeholder="Description of your site, page names, and what you want them to contain..." ></textarea>
+                    </div>
 					<div class="row center">
 						<input type="submit" value="Submit" class="button">
 					</div>
