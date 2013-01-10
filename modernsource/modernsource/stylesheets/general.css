@@ -1,0 +1,70 @@
+body {
+	background: url('../images/background.png') !important;
+}
+
+div.logotext {
+	font-size:44pt;
+	font-weight:300;
+	color:black;
+}
+
+div.body {
+	width:100% !important;
+	background:url('../images/body.png');
+}
+
+div.seperator {
+	height:15px;
+	width:100% !important;
+	background:inherit;
+}
+
+div.nav {
+	font-weight:300;
+	font-size:20pt;
+}
+
+.red {
+	color: #c60f13;
+}
+
+.blue {
+color: #2ba6cb;
+}
+
+.green {
+	color:#5da423;
+}
+
+.orange {
+	color:#f2ac29;
+	
+}
+
+.center {
+	text-align:center;
+}
+
+img.page_image {
+	height:250px;
+}
+
+div.panel_title {
+	text-align:center;
+	font-size:14pt;
+	border-bottom: 1px solid #B7B7B7;
+}
+
+.panel_text {
+	font-size:10pt;
+}
+
+.price {
+	font-size: 20pt;
+	text-align:center;
+}
+
+.features {
+	margin-left:50px;
+	font-size:14px;
+}
