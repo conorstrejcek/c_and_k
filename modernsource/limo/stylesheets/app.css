@@ -1,0 +1,53 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body {
+    background: url('../images/background.png');
+}
+
+.center {
+    text-align:center;
+}
+
+.logotext {
+    font-size:35px;
+}
+
+.seperator {
+    height:15px;
+	width:100% !important;
+	background:inherit;
+}
+
+.logo {
+    height:150px;
+}
+
+/*img.services{
+    display:block;
+    margin:0 auto;
+}*/
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
